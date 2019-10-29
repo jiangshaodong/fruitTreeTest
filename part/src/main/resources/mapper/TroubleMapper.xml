@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.part.dao.TroubleDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.part.entity.Trouble">
+		<id column="id" property="id" />
+		<result column="user_id" property="userId" />
+		<result column="cc_id" property="ccId" />
+		<result column="cw_id" property="cwId" />
+		<result column="trouble_img" property="troubleImg" />
+		<result column="trouble_dec" property="troubleDec" />
+		<result column="flag" property="flag" />
+		<result column="publish_time" property="publishTime" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, user_id, cc_id, cw_id, trouble_img, trouble_dec, flag, publish_time
+    </sql>
+
+</mapper>

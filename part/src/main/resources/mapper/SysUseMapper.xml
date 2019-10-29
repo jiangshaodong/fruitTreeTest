@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.part.dao.SysUseDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.part.entity.SysUse">
+		<id column="id" property="id" />
+		<result column="user_name" property="userName" />
+		<result column="password" property="password" />
+		<result column="role" property="role" />
+		<result column="can_use" property="canUse" />
+		<result column="head_img" property="headImg" />
+		<result column="nick_name" property="nickName" />
+		<result column="rongyun_token" property="rongyunToken" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, user_name, password, role, can_use, head_img, nick_name, rongyun_token
+    </sql>
+
+</mapper>

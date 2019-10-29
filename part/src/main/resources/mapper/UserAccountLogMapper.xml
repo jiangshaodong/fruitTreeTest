@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.part.dao.UserAccountLogDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.part.entity.UserAccountLog">
+		<id column="id" property="id" />
+		<result column="money" property="money" />
+		<result column="log" property="log" />
+		<result column="is_add" property="isAdd" />
+		<result column="publish_time" property="publishTime" />
+		<result column="pay_num" property="payNum" />
+		<result column="pay_time" property="payTime" />
+		<result column="pay_type" property="payType" />
+		<result column="is_pay" property="isPay" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, money, log, is_add, publish_time, pay_num, pay_time, pay_type, is_pay
+    </sql>
+
+</mapper>

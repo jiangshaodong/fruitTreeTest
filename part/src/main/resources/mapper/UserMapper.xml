@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.part.dao.UserDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.part.entity.User">
+		<id column="id" property="id" />
+		<result column="phone" property="phone" />
+		<result column="password" property="password" />
+		<result column="reputation_mark" property="reputationMark" />
+		<result column="car_number" property="carNumber" />
+		<result column="head_img" property="headImg" />
+		<result column="nick_name" property="nickName" />
+		<result column="gender" property="gender" />
+		<result column="referee_id" property="refereeId" />
+		<result column="qq_token" property="qqToken" />
+		<result column="wx_token" property="wxToken" />
+		<result column="account" property="account" />
+		<result column="publish_time" property="publishTime" />
+		<result column="last_login_date" property="lastLoginDate" />
+		<result column="can_use" property="canUse" />
+		<result column="rongyun_token" property="rongyunToken" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, phone, password, reputation_mark, car_number, head_img, nick_name, gender, referee_id, qq_token, wx_token, account, publish_time, last_login_date, can_use, rongyun_token
+    </sql>
+
+</mapper>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.part.dao.OrderDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.part.entity.Order">
+		<id column="id" property="id" />
+		<result column="order_num" property="orderNum" />
+		<result column="order_price" property="orderPrice" />
+		<result column="create_time" property="createTime" />
+		<result column="end_time" property="endTime" />
+		<result column="pay_time" property="payTime" />
+		<result column="pay_type" property="payType" />
+		<result column="state" property="state" />
+		<result column="is_del" property="isDel" />
+		<result column="user_id" property="userId" />
+		<result column="coupon_id" property="couponId" />
+		<result column="real_pay" property="realPay" />
+		<result column="cc_id" property="ccId" />
+		<result column="cw_id" property="cwId" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, order_num, order_price, create_time, end_time, pay_time, pay_type, state, is_del, user_id, coupon_id, real_pay, cc_id, cw_id
+    </sql>
+    
+    <resultMap id="OrderVo" type="com.part.entity.vo.OrderVo" extends="BaseResultMap">
+		<association property="user" column="user_id" select="com.part.dao.UserDao.selectById"></association>
+		<association property="parkinglot" column="cc_id" select="com.part.dao.ParkinglotDao.selectById"></association>
+	</resultMap>
+	
+	<select id="findOrderVo" resultMap="OrderVo">
+		SELECT
+		t1.*,t2.*,t3.*
+		FROM p_order t1 left join p_user t2 on t1.user_id=t2.id 
+		left join p_parkinglot t3 on t1.cc_id=t3.id
+		<where>
+			${ew.sqlSegment}
+		</where>
+	</select>
+
+</mapper>
